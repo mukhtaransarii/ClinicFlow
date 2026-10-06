@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { authMiddleware } from '../../middleware/auth';
+import { createSchedule, getSchedules, updateSchedule, deleteSchedule } from './schedule.controller';
+const router = Router();
+router.use(authMiddleware);
+router.post('/', createSchedule);
+router.get('/', getSchedules);
+router.patch('/:id', updateSchedule);
+router.delete('/:id', deleteSchedule);
+export default router;

@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { authMiddleware } from '../../middleware/auth';
+import { createDoctor, getDoctors, getDoctor, updateDoctor, deleteDoctor } from './doctor.controller';
+const router = Router();
+router.use(authMiddleware);
+router.post('/', createDoctor);
+router.get('/', getDoctors);
+router.get('/:id', getDoctor);
+router.patch('/:id', updateDoctor);
+router.delete('/:id', deleteDoctor);
+export default router;
