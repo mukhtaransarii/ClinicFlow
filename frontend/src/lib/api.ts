@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.BACKEND_API_URL || "http://localhost:3000";
 export class ApiError extends Error {
     status: number;
     constructor(message: string, status: number) {
